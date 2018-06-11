@@ -3,6 +3,7 @@ public class Cramersche implements ISolver
 {
     public static void main(String args[]) throws IOException
     {
+    	
         BufferedReader BR=new BufferedReader(new InputStreamReader (System.in));
         int Number[][]=new int[3][4];
         int i,j;
