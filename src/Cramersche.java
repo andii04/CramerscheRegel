@@ -19,6 +19,7 @@ public class Cramersche
             for(j=0;j<=3;j++)
             {
                 try {
+                	System.out.println("x"+(j+1));
 					m=BR.readLine();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
@@ -27,10 +28,11 @@ public class Cramersche
                 Number[i][j]=Integer.parseInt(m);
             }
         }
-        System.out.println("Elements in Matrix are : ");
+        System.out.println("LGS:");
                                 System.out.println("");
         for(i=0;i<=2;i++)
         {
+        	
             for(j=0;j<=3;j++)
             {
                 System.out.print(Number[i][j]+"\t");
