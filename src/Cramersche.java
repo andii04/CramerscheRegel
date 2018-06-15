@@ -69,7 +69,7 @@ public class Cramersche
 				System.out.print(tempArray[j][0]);
 			}
 			if(detA!=0) {
-				ergebnis[i] = CalculateDet(tempArray)/detA;
+				ergebnis[i] = Math.round((CalculateDet(tempArray)/detA)*100)/100.0;
 			}
 			else {ergebnis[i]=0;}
 			System.out.println(ergebnis[i]);
