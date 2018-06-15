@@ -7,13 +7,13 @@ public class Cramersche
     
     public static void main(String args[]) throws IOException
     {
-    	wdeingabeMatrix();
+    	eingabeMatrix();
     	System.out.println("now calculating");
         Calculate();
     }
 
 	
-	public static void wdeingabeMatrix() {
+	public static void eingabeMatrix() {
 		BufferedReader BR=new BufferedReader(new InputStreamReader (System.in));
         int i,j;
         String m = null;
