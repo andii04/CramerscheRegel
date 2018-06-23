@@ -37,6 +37,8 @@ class CramerscheTest {
 	void setUp() throws Exception {
 	}
 
+	
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -47,6 +49,7 @@ class CramerscheTest {
 	@Test
 	void test() {
 		fail("Not yet implemented");
+		Cramersche.Calculate(3);
 	}
 
 }

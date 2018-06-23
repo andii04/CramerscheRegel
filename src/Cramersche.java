@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.Arrays;
-public class Cramersche 
+public class Cramersche extends CramerscheTest
 {
    
     public static void main(String args[]) throws IOException
