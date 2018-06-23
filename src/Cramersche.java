@@ -2,18 +2,17 @@ import java.io.*;
 import java.util.Arrays;
 public class Cramersche 
 {
-    public static double Number[][]=new double[3][4];
-	public static double ergebnis[] = new double[3];
-    
+   
     public static void main(String args[]) throws IOException
     {
-    	eingabeMatrix();
+    	double[][] eingabe = eingabeMatrix();
     	System.out.println("\n now calculating");
-        Calculate();
+        Calculate(eingabe);
     }
 
-	
-	public static void eingabeMatrix() {
+	//GUI Part -> cannot be tested by unit tests
+	public static double[][] eingabeMatrix() {
+		double Number[][]=new double[3][4];
 		BufferedReader BR=new BufferedReader(new InputStreamReader (System.in));
         int i,j;
         String m = null;
@@ -52,11 +51,13 @@ public class Cramersche
             }
             System.out.println();
         }
+        
+        return Number;
 		
 	}
 	
-	public static  void Calculate() {
-		
+	public static double[] Calculate(double[][] Number) {
+		double ergebnis[] = new double[3];
 		double[][] matrix = new double[3][3];
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
@@ -85,7 +86,7 @@ public class Cramersche
 		}
 		System.out.println("Ergebnis: \n");
 		System.out.println(ergebnis[0]+"\t"+ ergebnis[1]+"\t" + ergebnis[2]);
-		
+		return ergebnis;
 	}
 	public static double CalculateDet(double[][] a) {
 		double det= 
