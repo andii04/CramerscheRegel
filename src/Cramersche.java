@@ -23,8 +23,17 @@ public class Cramersche
             for(j=0;j<=3;j++)
             {
                 try {
-                	System.out.println("x"+(j+1));
-					m=BR.readLine();
+                	if(j==3)
+                	{
+                		System.out.println("y");
+    					m=BR.readLine();
+                	}
+                	else 
+                	{
+                		System.out.println("x"+(j+1));
+    					m=BR.readLine();
+                	}
+                	
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -66,7 +75,7 @@ public class Cramersche
 			//tempArray = matrix.clone();
 			for(int j = 0; j <3; j++) {//
 				tempArray[j][i]=Number[j][3];
-				System.out.print(tempArray[j][0]);
+				System.out.print(tempArray[j][0]+" ");
 			}
 			if(detA!=0) {
 				ergebnis[i] = Math.round((CalculateDet(tempArray)/detA)*100)/100.0;
