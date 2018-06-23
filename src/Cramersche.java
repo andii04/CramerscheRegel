@@ -8,7 +8,7 @@ public class Cramersche
     public static void main(String args[]) throws IOException
     {
     	eingabeMatrix();
-    	System.out.println("now calculating");
+    	System.out.println("\n now calculating");
         Calculate();
     }
 
@@ -75,7 +75,7 @@ public class Cramersche
 			//tempArray = matrix.clone();
 			for(int j = 0; j <3; j++) {//
 				tempArray[j][i]=Number[j][3];
-				System.out.print(tempArray[j][0]+" ");
+				System.out.print(tempArray[j][0]+"\t");
 			}
 			if(detA!=0) {
 				ergebnis[i] = Math.round((CalculateDet(tempArray)/detA)*100)/100.0;
@@ -83,7 +83,8 @@ public class Cramersche
 			else {ergebnis[i]=0;}
 			System.out.println(ergebnis[i]);
 		}
-		System.out.println(ergebnis[0]+" "+ ergebnis[1]+ " " + ergebnis[2]);
+		System.out.println("Ergebnis: \n");
+		System.out.println(ergebnis[0]+"\t"+ ergebnis[1]+"\t" + ergebnis[2]);
 		
 	}
 	public static double CalculateDet(double[][] a) {
