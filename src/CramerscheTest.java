@@ -48,8 +48,15 @@ class CramerscheTest {
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
-		Cramersche.Calculate(3);
+		
+		double[] line1 = {-1,1,1,0};
+		double[] line2 = {1,-3,-2,5};
+		double[] line3 = {5,1,4,3};
+		double[][] numbers = {line1, line2, line3};
+		double[] result = Cramersche.Calculate(numbers);
+		assertEquals(result[0], -1, 0.1);
+		assertEquals(result[1], -4, 0.1);
+		assertEquals(result[2], 3, 0.1);
 	}
 
 }
