@@ -17,29 +17,37 @@ public class Cramersche implements ISolver
         int i,j;
         String m = null;
         System.out.println("Enter Elements for Matrix 3x3 :");
-        for(i=0;i<=2;i++)
-        {
-            for(j=0;j<=3;j++)
-            {
-                try {
-                	if(j==3)
-                	{
-                		System.out.println("y");
-    					m=BR.readLine();
-                	}
-                	else 
-                	{
-                		System.out.println("x"+(j+1));
-    					m=BR.readLine();
-                	}
-                	
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-                Number[i][j]=Double.parseDouble(m);
-            }
-        }
+        
+        
+        try {
+			for(i=0;i<=2;i++)
+			{
+			    for(j=0;j<=3;j++)
+			    {
+			        try {
+			        	if(j==3)
+			        	{
+			        		System.out.println("y");
+							m=BR.readLine();
+			        	}
+			        	else 
+			        	{
+			        		System.out.println("x"+(j+1));
+							m=BR.readLine();
+			        	}
+			        	
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+			        Number[i][j]=Double.parseDouble(m);
+			    }
+			}
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Fehler bei Eingabe keine Zahl");
+		}
         System.out.println("LGS:");
                                 System.out.println("");
         for(i=0;i<=2;i++)
