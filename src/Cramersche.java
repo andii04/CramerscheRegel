@@ -11,7 +11,7 @@ public class Cramersche implements ISolver
     }
 
 	//GUI Part -> cannot be tested by unit tests
-	public static double[][] eingabeMatrix() {
+    public static double[][] eingabeMatrix() throws IOException, IllegalArgumentException{
 		double Number[][]=new double[3][4];
 		BufferedReader BR=new BufferedReader(new InputStreamReader (System.in));
         int i,j;
