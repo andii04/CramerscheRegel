@@ -45,9 +45,29 @@ class CramerscheTest {
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-
+	
 	@Test
-	void test() {
+	void testDet() {
+		
+		double[] line1 = {1,2,3};
+		double[] line2 = {4, 5,6};
+		double[] line3 = {7,8,9};
+		double[][] numbers = {line1, line2, line3};
+		double result = Cramersche.CalculateDet(numbers);
+		assertEquals(result, 0, 0.1);
+		
+		double[] test2line1 = {2,5,2};
+		double[] test2line2 = {3, -3, 1};
+		double[] test2line3 = {1,4,-4};
+		double[][] test2numbers = {test2line1, test2line2, test2line3};
+		double test2result = Cramersche.CalculateDet(test2numbers);
+		assertEquals(test2result, 111, 0.1);
+		
+	}
+	
+	
+	@Test
+	void testEquation() {
 		
 		double[] line1 = {-1,1,1,0};
 		double[] line2 = {1,-3,-2,5};
