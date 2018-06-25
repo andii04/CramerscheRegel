@@ -19,7 +19,7 @@ public class Cramersche implements ISolver
         System.out.println("Enter Elements for Matrix 3x3 :");
         
         
-        try {
+
 			for(i=0;i<=2;i++)
 			{
 			    for(j=0;j<=3;j++)
@@ -38,16 +38,13 @@ public class Cramersche implements ISolver
 			        	
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
-						e.printStackTrace();
 					}
-			        Number[i][j]=Double.parseDouble(m);
+			        try {
+				        Number[i][j]=Double.parseDouble(m);			        	
+			        }
+			        catch(NumberFormatException e) {j--;}
 			    }
 			}
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			System.out.println("Fehler bei Eingabe keine Zahl");
-		}
         System.out.println("LGS:");
                                 System.out.println("");
         for(i=0;i<=2;i++)
