@@ -40,16 +40,7 @@ public class Cramersche implements ISolver
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-			        try {
-						Number[i][j]=Double.parseDouble(m);
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-						//Test soooooooo ?? ka
-						//Hier standardwerte für array vergeben, aber ka wie man des macht ?!
-						String s = "{1,2,3,4}";
-						Number[i][j]= Double.parseDouble(s);
-					}
+			        Number[i][j]=Double.parseDouble(m);
 			    }
 			}
 		} catch (NumberFormatException e) {
