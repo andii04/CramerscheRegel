@@ -40,7 +40,14 @@ public class Cramersche implements ISolver
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-			        Number[i][j]=Double.parseDouble(m);
+			        try {
+						Number[i][j]=Double.parseDouble(m);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						String s = "{1,2,3,4}";
+						Number[i][j]= Double.parseDouble(s);
+					}
 			    }
 			}
 		} catch (NumberFormatException e) {
