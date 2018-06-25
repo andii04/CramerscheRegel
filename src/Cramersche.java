@@ -63,7 +63,7 @@ public class Cramersche implements ISolver
         return Number;
 		
 	}
-	
+	//https://de.wikibooks.org/wiki/MathGymOS/_LGS/_Das_Determinanten-Verfahren
 	public static double[] Calculate(double[][] Number) {
 		double ergebnis[] = new double[3];
 		double[][] matrix = new double[3][3];
@@ -85,18 +85,22 @@ public class Cramersche implements ISolver
 				tempArray[j][i]=Number[j][3];
 				System.out.print(tempArray[j][0]+"\t");
 			}
-			if(detA!=0) {
+			if(detA!=0) { //One Lösung
 				ergebnis[i] = Math.round((CalculateDet(tempArray)/detA)*100)/100.0;
 			}
-			else {ergebnis[i]=0; 
-			System.out.println("Es gibt keine Lösung!");
+			else {ergebnis=null;
 			break;
 			}
 			System.out.println(ergebnis[i]);
 		}
+		if(ergebnis!=null) {
 		System.out.println("Ergebnis: \n");
 		System.out.println(ergebnis[0]+"\t"+ ergebnis[1]+"\t" + ergebnis[2]);
-		return ergebnis;
+		return ergebnis;}
+		else {
+			System.out.println("Nicht eindeutig lösbar. Es gibt mehrere oder keine Lösung!");
+			return ergebnis; ////////////fis
+		}
 	}
 	public static double CalculateDet(double[][] a) {
 		double det= 
