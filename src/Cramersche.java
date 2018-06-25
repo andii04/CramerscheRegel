@@ -70,7 +70,6 @@ public class Cramersche implements ISolver
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
 				matrix[i][j] = Number[i][j];
-				//System.out.print(i+" " + j);
 			}
 		}
 		double[][] tempArray = new double[3][3];
@@ -89,7 +88,10 @@ public class Cramersche implements ISolver
 			if(detA!=0) {
 				ergebnis[i] = Math.round((CalculateDet(tempArray)/detA)*100)/100.0;
 			}
-			else {ergebnis[i]=0;}
+			else {ergebnis[i]=0; 
+			System.out.println("Es gibt keine Lösung!");
+			break;
+			}
 			System.out.println(ergebnis[i]);
 		}
 		System.out.println("Ergebnis: \n");
