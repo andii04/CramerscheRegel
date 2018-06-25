@@ -45,7 +45,7 @@ public class Cramersche implements ISolver
 			}
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 			System.out.println("Fehler bei Eingabe keine Zahl");
 		}
         System.out.println("LGS:");
