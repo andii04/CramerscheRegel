@@ -27,12 +27,12 @@ public class Cramersche implements ISolver
 			        try {
 			        	if(j==3)
 			        	{
-			        		System.out.print("y ");
+			        		System.out.print("y: ");
 							m=BR.readLine();
 			        	}
 			        	else 
 			        	{
-			        		System.out.print("x"+(j+1)+" ");
+			        		System.out.print("x"+(j+1)+": ");
 							m=BR.readLine();
 			        	}
 			        	
