@@ -24,7 +24,14 @@ class CramerscheTest {
 		double[] test2line3 = {1,4,-4};
 		double[][] test2numbers = {test2line1, test2line2, test2line3};
 		double test2result = Cramersche.CalculateDet(test2numbers);
-		assertEquals(test2result, 111, 0.1);		
+		assertEquals(test2result, 111, 0.1);
+		
+		
+		
+		double[] nullLine= {0,0,0};
+		double[] nullArray = {nullLine, nullLine, nullLine};
+		double test3Result = Cramersche.CalculateDet(test2numbers);
+		assertEquals(testRresult, 111, 0.1);
 	}
 	
 	//////////////////////////////////////////////////////////////////

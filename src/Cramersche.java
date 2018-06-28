@@ -110,7 +110,8 @@ public class Cramersche implements ISolver
 		return ergebnis;}
 		else {
 			System.out.println("Nicht eindeutig lösbar. Es gibt mehrere oder keine Lösung!");
-			return ergebnis; ////////////fis
+			double noSolution[] = { Double.NaN, Double.NaN, Double.NaN};
+			return noSolution; ////////////fis
 		}
 	}
 	public static double CalculateDet(double[][] a) {
