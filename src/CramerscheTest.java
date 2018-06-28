@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 class CramerscheTest {
 
-	//This Unittest is from Fabian Schurk////////////////////////////
+	//This Unittest part is from Fabian Schurk////////////////////////////
 	@Test
 	void testDet() {
 		//Test 1 Det
@@ -28,7 +28,7 @@ class CramerscheTest {
 	}
 	
 	//////////////////////////////////////////////////////////////////
-	//This Unit Test is from Andreas Wörrlein----------------------------
+	//This Unit Test part is from Andreas Wörrlein----------------------------
 	@Test
 	void testEquation() {
 		//Test if calculates results right
