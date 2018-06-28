@@ -12,24 +12,29 @@ public class Cramersche implements ISolver
     //this Method is from Andreas Wörrlein----------
 	//GUI Part -> cannot be tested by unit tests
     public static double[][] eingabeMatrix() throws IOException, IllegalArgumentException{
-		double Number[][]=new double[3][4];
+		//delarations and initizialises
+    	double Number[][]=new double[3][4];
 		BufferedReader BR=new BufferedReader(new InputStreamReader (System.in));
         int i,j;
         String m = null;
+        //Asks the User to write his Matrix
         System.out.println("Enter Elements for Matrix 3x3 :");
         
         
-
+        	//For loop for the rows
 			for(i=0;i<=2;i++)
 			{
+				//For loop for the columns
 			    for(j=0;j<=3;j++)
 			    {
 			        try {
+			        	//if last column then ask for y
 			        	if(j==3)
 			        	{
 			        		System.out.print("y: ");
 							m=BR.readLine();
 			        	}
+			        	//else then ask for x-value
 			        	else 
 			        	{
 			        		System.out.print("x"+(j+1)+": ");
@@ -39,12 +44,16 @@ public class Cramersche implements ISolver
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 					}
+			        //if can parse to Double then write it in Array
 			        try {
 				        Number[i][j]=Double.parseDouble(m);			        	
 			        }
+			        //if cant parse to Double, then ask again for Number
 			        catch(NumberFormatException e) {j--;}
 			    }
 			}
+		
+		//prints the Matrix in console
         System.out.println("LGS:");
                                 System.out.println("");
         for(i=0;i<=2;i++)
