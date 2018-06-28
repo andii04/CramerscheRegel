@@ -1,6 +1,6 @@
 
 public interface ISolver {
-	
+	//Interface made by Andreas Wörrlein
 	double det=0;
 	double ergebnis[] = new double[3];
 	double Number[][]=new double[3][4];

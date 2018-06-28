@@ -5,18 +5,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-/**
- * 
- */
-
-/**
- * @author AWOE
- *
- */
 class CramerscheTest {
 
-	
+	//This Unittest is from Fabian Schurk////////////////////////////
 	@Test
 	void testDet() {
 		//Test 1 Det
@@ -36,7 +27,8 @@ class CramerscheTest {
 		assertEquals(test2result, 111, 0.1);		
 	}
 	
-	
+	//////////////////////////////////////////////////////////////////
+	//This Unit Test is from Andreas Wörrlein----------------------------
 	@Test
 	void testEquation() {
 		//Test if calculates results right
@@ -49,5 +41,5 @@ class CramerscheTest {
 		assertEquals(result[1], -4, 0.1);
 		assertEquals(result[2], 3, 0.1);
 	}
-
+	//----------------------------------------------------------------------
 }

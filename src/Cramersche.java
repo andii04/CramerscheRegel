@@ -9,7 +9,7 @@ public class Cramersche implements ISolver
     	System.out.println("\n now calculating");
         Calculate(eingabe);
     }
-
+    //this Method is from Andreas Wörrlein----------
 	//GUI Part -> cannot be tested by unit tests
     public static double[][] eingabeMatrix() throws IOException, IllegalArgumentException{
 		double Number[][]=new double[3][4];
@@ -60,6 +60,8 @@ public class Cramersche implements ISolver
         return Number;
 		
 	}
+    //-------------------------------------------------------------------------------
+    //This method is from Fabian Schurk/////////////////////////////////////////////
 	//https://de.wikibooks.org/wiki/MathGymOS/_LGS/_Das_Determinanten-Verfahren
 	public static double[] Calculate(double[][] Number) {
 		double ergebnis[] = new double[3];
@@ -113,4 +115,4 @@ public class Cramersche implements ISolver
 
 }
 
-
+/////////////////////////////////////////////////////////////////////////
