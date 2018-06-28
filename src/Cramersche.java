@@ -15,7 +15,8 @@ public class Cramersche implements ISolver
 		//delarations and initizialises
     	double Number[][]=new double[3][4];
 		BufferedReader BR=new BufferedReader(new InputStreamReader (System.in));
-        int i,j;
+        //rows and columns
+		int i,j;
         String m = null;
         //Asks the User to write his Matrix
         System.out.println("Enter Elements for Matrix 3x3 :");
