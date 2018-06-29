@@ -76,43 +76,40 @@ public class Cramersche implements ISolver
     //This method is from Fabian Schurk/////////////////////////////////////////////
 	//https://de.wikibooks.org/wiki/MathGymOS/_LGS/_Das_Determinanten-Verfahren
 	public static double[] Calculate(double[][] Number) {
-		double ergebnis[] = new double[3];
-		double[][] matrix = new double[3][3];
+		double result[] = new double[3]; //saves the result
+		double[][] matrix = new double[3][3]; //copys the matrix 
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
 				matrix[i][j] = Number[i][j];
 			}
 		}
-		double[][] tempArray = new double[3][3];
-		double detA = CalculateDet(Number);
-		for (int i = 0; i < 3; i++) {
+		double[][] tempArray = new double[3][3]; //temparray which is replaced with the different values
+		double detA = CalculateDet(Number); //calculates the det A
+		for (int i = 0; i < 3; i++) {  //copys the array form 3*4 to 3*3
 			for (int j = 0; j < 3; j++) {
 				for (int k = 0; k < 3; k++) {
-					tempArray[k][j]= matrix[k][j];
+					tempArray[k][j]= matrix[k][j];  
 				}
 			}
-			//tempArray = matrix.clone();
 			for(int j = 0; j <3; j++) {//
 				tempArray[j][i]=Number[j][3];
 				System.out.print(tempArray[j][0]+"\t");
 			}
-			if(detA!=0) { //One Lösung
-				ergebnis[i] = Math.round((CalculateDet(tempArray)/detA)*100)/100.0;
+			if(detA!=0) { //if only one solution 
+				result[i] = Math.round((CalculateDet(tempArray)/detA)*100)/100.0;
 			}
-			else {ergebnis=null;
+			else {//if 
+				double[] nan = {Double.NaN,Double.NaN,Double.NaN};
+				System.out.println("Nicht eindeutig lösbar. Es gibt mehrere oder keine Lösung!");
+				result=nan;
 			break;
 			}
-			System.out.println(ergebnis[i]);
+			System.out.println(result[i]);
 		}
-		if(ergebnis!=null) {
-		System.out.println("Ergebnis: \n");
-		System.out.println(ergebnis[0]+"\t"+ ergebnis[1]+"\t" + ergebnis[2]);
-		return ergebnis;}
-		else {
-			System.out.println("Nicht eindeutig lösbar. Es gibt mehrere oder keine Lösung!");
-			double noSolution[] = { Double.NaN, Double.NaN, Double.NaN};
-			return noSolution; ////////////fis
-		}
+		
+		System.out.println("result: \n");
+		System.out.println(result[0]+"\t"+ result[1]+"\t" + result[2]);
+		return result;
 	}
 	public static double CalculateDet(double[][] a) {
 		double det= 

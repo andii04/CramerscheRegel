@@ -27,11 +27,11 @@ class CramerscheTest {
 		assertEquals(test2result, 111, 0.1);
 		
 		
-		
+		//test 3 det = 0;
 		double[] nullLine= {0,0,0};
 		double[][] nullArray = {nullLine, nullLine, nullLine};
-		double test3Result = Cramersche.CalculateDet(test2numbers);
-		assertEquals(test3Result, 111, 0.1);
+		double test3Result = Cramersche.CalculateDet(nullArray);
+		assertEquals(test3Result, 0, 0.1);
 	}
 	
 	//////////////////////////////////////////////////////////////////
