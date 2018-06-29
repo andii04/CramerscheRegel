@@ -47,6 +47,17 @@ class CramerscheTest {
 		assertEquals(result[0], -1, 0.1);
 		assertEquals(result[1], -4, 0.1);
 		assertEquals(result[2], 3, 0.1);
+		
+		
+		
+		double[] line4 = {1,2,3};
+		double[] line5 = {4, 5,6};
+		double[] line6 = {7,8,9};
+		double[][] numbers1 = {line4, line5, line6};
+		double[] result1 = Cramersche.Calculate(numbers1);
+		assertEquals(result1[0], Double.NaN, 0.1);
+		assertEquals(result1[1], Double.NaN, 0.1);
+		assertEquals(result1[2], Double.NaN, 0.1);
 	}
 	//----------------------------------------------------------------------
 }

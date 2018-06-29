@@ -15,7 +15,7 @@ public interface ISolver {
 	public static double[] Calculate(double[][] Number) {
 		return ergebnis;
 	}
-	//Method for calculate Solution of Determinante
+	//Method for calculate result of Determinante
 	public static double CalculateDet(double[][] a) {
 		return det;
 	}

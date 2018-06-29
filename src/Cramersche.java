@@ -22,14 +22,14 @@ public class Cramersche implements ISolver
         System.out.println("Enter Elements for Matrix 3x3 :");
         
         
-        	//For loop for the rows
+        	//For-loop for the rows
 			for(i=0;i<=2;i++)
 			{
-				//For loop for the columns
+				//For-loop for the columns
 			    for(j=0;j<=3;j++)
 			    {
 			        try {
-			        	//if last column then ask for y
+			        	//if last column then ask for y-value
 			        	if(j==3)
 			        	{
 			        		System.out.print("y: ");
