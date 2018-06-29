@@ -3,7 +3,7 @@ public interface ISolver {
 	//Interface made by Andreas Wörrlein
 	//declarations
 	double det=0;
-	double ergebnis[] = new double[3];
+	double result[] = new double[3];
 	double Number[][]=new double[3][4];
 	
 	
@@ -13,9 +13,9 @@ public interface ISolver {
 	}
 	//Method for Calculate Matrix
 	public static double[] Calculate(double[][] Number) {
-		return ergebnis;
+		return result;
 	}
-	//Method for calculate result of Determinante
+	//Method for calculate Solution of Determinante
 	public static double CalculateDet(double[][] a) {
 		return det;
 	}
