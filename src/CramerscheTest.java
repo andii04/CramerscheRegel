@@ -16,22 +16,22 @@ class CramerscheTest {
 		double[] line3 = {7,8,9};
 		double[][] numbers = {line1, line2, line3};
 		double result = Cramersche.CalculateDet(numbers);
-		assertEquals(result, 0, 0.1);
+		assertEquals(result, 0, 0.1); //result is 0	
 		
 		//Test 2 Det
-		double[] test2line1 = {2,5,2};
-		double[] test2line2 = {3, -3, 1};
-		double[] test2line3 = {1,4,-4};
-		double[][] test2numbers = {test2line1, test2line2, test2line3};
-		double test2result = Cramersche.CalculateDet(test2numbers);
-		assertEquals(test2result, 111, 0.1);
+		double[] test2Line1 = {2,5,2};
+		double[] test2Line2 = {3, -3, 1};
+		double[] test2Line3 = {1,4,-4};
+		double[][] test2Numbers = {test2Line1, test2Line2, test2Line3};
+		double test2Result = Cramersche.CalculateDet(test2Numbers);
+		assertEquals(test2Result, 111, 0.1); //result is 111
 		
 		
 		//test 3 det = 0;
 		double[] nullLine= {0,0,0};
 		double[][] nullArray = {nullLine, nullLine, nullLine};
 		double test3Result = Cramersche.CalculateDet(nullArray);
-		assertEquals(test3Result, 0, 0.1);
+		assertEquals(test3Result, 0, 0.1); //result is 0
 	}
 	
 	//////////////////////////////////////////////////////////////////

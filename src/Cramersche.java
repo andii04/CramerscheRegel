@@ -5,9 +5,8 @@ public class Cramersche implements ISolver
    
     public static void main(String args[]) throws IOException
     {
-    	double[][] eingabe = eingabeMatrix();
-    	System.out.println("\n now calculating");
-        Calculate(eingabe);
+    	double[][] eingabe = eingabeMatrix(); //iput
+        Calculate(eingabe); //Calculation
     }
     //this Method is from Andreas Wörrlein--------------------------------
 	//GUI Part -> cannot be tested by unit tests
@@ -76,6 +75,7 @@ public class Cramersche implements ISolver
     //This method is from Fabian Schurk/////////////////////////////////////////////
 	//https://de.wikibooks.org/wiki/MathGymOS/_LGS/_Das_Determinanten-Verfahren
 	public static double[] Calculate(double[][] Number) {
+		System.out.print("Das Ergebnis ist: ");
 		double result[] = new double[3]; //saves the result
 		double[][] matrix = new double[3][3]; //copys the matrix 
 		for (int i = 0; i < 3; i++) {
@@ -84,43 +84,37 @@ public class Cramersche implements ISolver
 			}
 		}
 		double[][] tempArray = new double[3][3]; //temparray which is replaced with the different values
-		double detA = CalculateDet(Number); //calculates the det A
-		for (int i = 0; i < 3; i++) {  //copys the array form 3*4 to 3*3
-			for (int j = 0; j < 3; j++) {
+		double detA = CalculateDet(Number); //calculates the det A which is the divisor of every calculation
+		if(detA ==0) {
+			double[] nan = {Double.NaN,Double.NaN,Double.NaN}; //no result
+			System.out.print("Nicht eindeutig lösbar. Es gibt mehrere oder keine Lösung!");//returns output
+			result=nan; 
+			return result;//returns so funciton is over
+		}
+		for (int i = 0; i < 3; i++) {  //doing it 3 times for each calculation /determinante
+			for (int j = 0; j < 3; j++) { //copying to temparray
 				for (int k = 0; k < 3; k++) {
 					tempArray[k][j]= matrix[k][j];  
 				}
 			}
-			for(int j = 0; j <3; j++) {//
+			for(int j = 0; j <3; j++) { //change one vectors of the matrix with the result vector
 				tempArray[j][i]=Number[j][3];
-				System.out.print(tempArray[j][0]+"\t");
 			}
-			if(detA!=0) { //if only one solution 
-				result[i] = Math.round((CalculateDet(tempArray)/detA)*100)/100.0;
-			}
-			else {//if 
-				double[] nan = {Double.NaN,Double.NaN,Double.NaN};
-				System.out.println("Nicht eindeutig lösbar. Es gibt mehrere oder keine Lösung!");
-				result=nan;
-			break;
-			}
-			System.out.println(result[i]);
+				result[i] = Math.round((CalculateDet(tempArray)/detA)*100)/100.0; //returns result with detx/detA what is rounded
 		}
-		
-		System.out.println("result: \n");
-		System.out.println(result[0]+"\t"+ result[1]+"\t" + result[2]);
-		return result;
+		System.out.print("x1=" + result[0]+" x2=" + result[1]+ "x2="+ result[2]); //visuell output
+		return result; //returns xx1, x2, x3
 	}
-	public static double CalculateDet(double[][] a) {
+	public static double CalculateDet(double[][] a) { //Calculates the det from the a array with sarrus
 		double det= 
 				a[0][0]*a[1][1]*a[2][2]+
 				a[0][1]*a[1][2]*a[2][0]+
 				a[0][2]*a[1][0]*a[2][1]-				
 				a[0][2]*a[1][1]*a[2][0]-
 				a[0][0]*a[1][2]*a[2][1]-
-				a[0][1]*a[1][0]*a[2][2];		
+				a[0][1]*a[1][0]*a[2][2];		//this is sarrus
 				
-		return det;
+		return det; //retruns the determinante
 	}
 
 }
