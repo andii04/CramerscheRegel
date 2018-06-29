@@ -75,7 +75,7 @@ public class Cramersche implements ISolver
     //This method is from Fabian Schurk/////////////////////////////////////////////
 	//https://de.wikibooks.org/wiki/MathGymOS/_LGS/_Das_Determinanten-Verfahren
 	public static double[] Calculate(double[][] Number) {
-		System.out.print("Das Ergebnis ist: ");
+		System.out.print("\n Das Ergebnis ist: ");
 		double result[] = new double[3]; //saves the result
 		double[][] matrix = new double[3][3]; //copys the matrix 
 		for (int i = 0; i < 3; i++) {
@@ -102,7 +102,7 @@ public class Cramersche implements ISolver
 			}
 				result[i] = Math.round((CalculateDet(tempArray)/detA)*100)/100.0; //returns result with detx/detA what is rounded
 		}
-		System.out.print("x1=" + result[0]+" x2=" + result[1]+ "x2="+ result[2]); //visuell output
+		System.out.print("\n x1=" + result[0]+"\n x2=" + result[1]+ "\n x2="+ result[2]); //visuell output
 		return result; //returns xx1, x2, x3
 	}
 	public static double CalculateDet(double[][] a) { //Calculates the det from the a array with sarrus
